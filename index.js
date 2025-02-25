@@ -7,6 +7,11 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+require("dotenv").config(); //Include .env file for API key access
+
+console.log("Server running on port:", process.env.PORT);
+console.log("API Key:", process.env.API_KEY);
+
 // * Please DO NOT INCLUDE the private app access token in your repo. Don't do this practicum in your normal account.
 const PRIVATE_APP_ACCESS = '';
 
