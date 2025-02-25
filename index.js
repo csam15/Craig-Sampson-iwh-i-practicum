@@ -9,15 +9,31 @@ app.use(express.json());
 
 require("dotenv").config(); //Include .env file for API key access
 
-console.log("Server running on port:", process.env.PORT);
-console.log("API Key:", process.env.API_KEY);
+//console.log("Server running on port:", process.env.PORT);
+//console.log("API Key:", process.env.API_KEY); 
 
 // * Please DO NOT INCLUDE the private app access token in your repo. Don't do this practicum in your normal account.
-const PRIVATE_APP_ACCESS = '';
+const PRIVATE_APP_ACCESS = process.env.API_KEY;
 
 // TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
 
 // * Code for Route 1 goes here
+
+app.get('/', async (req, res) => {
+    const customObject = "https://app.hubspot.com/contacts/49125295/objects/2-40889053/views/all/list";
+    const headers = {
+        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
+        'Content-Type': 'application/json'
+    }
+    try {
+        const resp = await axios.get(customObject, { headers });
+        const data = resp.data.results;
+        res.render('homepage', { title: 'Wrestling shoes | HubSpot APIs', data });      
+    } 
+    catch (error) {
+        console.error(error);
+    }
+});
 
 // TODO: ROUTE 2 - Create a new app.get route for the form to create or update new custom object data. Send this data along in the next route.
 

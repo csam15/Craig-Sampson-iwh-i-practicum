@@ -2,9 +2,9 @@
 
 This repository is for the Integrating With HubSpot I: Foundations course. This practicum is one of two requirements for receiving your Integrating With HubSpot I: Foundations certification. You must also take the exam and receive a passing grade (at least 75%).
 
-To read the full directions, please go to the [practicum instructions](https://app.hubspot.com/academy/l/tracks/1092124/1093824/5493?language=en).
+To read the full directions, please go to the [practicum instructions](https:    app.hubspot.com  academy  l  tracks  1092124  1093824  5493?language=en).
 
-**Put your HubSpot developer test account custom objects URL link here:** https://app.hubspot.com/contacts/49125295/objects/2-40889053/views/all/list
+**Put your HubSpot developer test account custom objects URL link here:** https:    app.hubspot.com  contacts  49125295  objects  2-40889053  views  all  list
 
 ___
 ## Tips:
@@ -15,12 +15,12 @@ ___
 - DO NOT ADD YOUR PRIVATE APP TOKEN TO YOUR REPOSITORY. 
 
 ## Pre-requisites:
-- Using [Node](https://nodejs.org/en/download) and node packages
-- Using [Express](https://expressjs.com/en/starter/installing.html)
-- Using [Axios](https://axios-http.com/docs/intro)
-- Using [Pug templating system](https://pugjs.org/api/getting-started.html)
+- Using [Node](https:    nodejs.org  en  download) and node packages
+- Using [Express](https:    expressjs.com  en  starter  installing.html)
+- Using [Axios](https:    axios-http.com  docs  intro)
+- Using [Pug templating system](https:    pugjs.org  api  getting-started.html)
 - Using the command line
-- Using [Git and GitHub](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
+- Using [Git and GitHub](https:    product.hubspot.com  blog  git-and-github-tutorial-for-beginners)
 
 ## Requirements
 - All work must be your own. During the grading process we will check the revision history. Submissions that do not meet this requirement will not be considered.
