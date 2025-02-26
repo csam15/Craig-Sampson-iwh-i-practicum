@@ -20,7 +20,7 @@ const PRIVATE_APP_ACCESS = process.env.API_KEY;
 // * Code for Route 1 goes here
 
 app.get('/', async (req, res) => {
-    const customObject = "https://api.hubapi.com/crm/v3/objects/2-40889053?properties=name,brand,color";
+    const customObject = "https://api.hubapi.com/crm/v3/objects/2-40889053?properties=name,brand,color"; 
     const headers = {
         Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
         'Content-Type': 'application/json'
@@ -28,11 +28,10 @@ app.get('/', async (req, res) => {
     try {
         const resp = await axios.get(customObject, { headers });
         const data = resp.data.results;
-        //console.log(data);
         res.render('homepage', {title: 'Wrestling Shoes | Hubspot APIs', data});  
     } 
     catch (error) {
-        console.error(error);
+        console.error("Error getting custom objects", error.response?.data || error.message); //Shows error message in console
     }
 });
 
@@ -58,16 +57,14 @@ app.post('/update-cobj', async (req, res) => {
         'Content-Type': 'application/json'
     }
 
-    const update = {properties: {name, brand, color} };
+    const update = {properties: {name, brand, color} }; 
 
     try {
         await axios.post(customObject, update, { headers });
-        res.redirect('/'); // Redirect to homepage after successful update
+        res.redirect('/'); // Redirect to homepage 
     } catch (error) {
-        console.error('Error updating object:', error.response?.data || error.message);
-        res.status(500).send('Failed to update custom object.');
+        console.error('Error updating object:', error.response?.data || error.message); //Shows error message in console
     }
-
 
 });
 
