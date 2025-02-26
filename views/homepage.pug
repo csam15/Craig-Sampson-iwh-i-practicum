@@ -17,7 +17,7 @@ head
             text-align: left;
         }
         th {
-            background-color:rgb(255, 255, 255);
+            background-color:rgb(196, 86, 86);
         }
      style  
 head  
@@ -29,29 +29,14 @@ body
              tr  
                  th  Name   
                  th  Brand   
-                 th  Color    
+                 th  Color  
              tr  
          thead  
-         //tbody (id="data-table")  
-     table  
-
-     script.  
-             //Fetch data using Axios and populate the table
-             axios.get("http:    localhost:3000  data")
-             .then(response =   {
-                const data = response.data;
-                const tableBody = document.getElementById("data-table");
-
-                data.forEach(user =   {
-                    const row = ` tr  
-                                     td  ${user.name}   td  
-                                     td  ${user.brand}   td  
-                                     td  ${user.color}   td  
-                                  tr  `;
-                    tableBody.innerHTML += row;
-                });
-            })
-            .catch(error =   console.error("Error fetching data:", error));
-     script  
+         tbody
+            each item in data
+                tr
+                    td= item.properties.name || 'N/A'
+                    td= item.properties.brand || 'N/A'
+                    td= item.properties.color || 'N/A'
 body  
 html  
