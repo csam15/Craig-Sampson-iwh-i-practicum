@@ -1,10 +1,9 @@
 doctype html
 html 
 head
-     //meta (charset="UTF-8")
-     //meta (name="viewport" content="width=device-width, initial-scale=1.0")
-     title = title
-     //script (src="https: cdn.jsdelivr.net  npm  axios  dist  axios.min.js")  
+     title= `${title}`
+     meta(name="viewport" content="width=device-width, initial-scale=1")
+     link(rel="stylesheet", href="css\style.css")
      style.
         table {
             width: 50%;
@@ -19,11 +18,10 @@ head
         th {
             background-color:rgb(196, 86, 86);
         }
-     style  
-head  
+
 body  
      h1  Custom Object Table
-     a(href='//google.com') Add/Update this table 
+     a(href='/update-cobj') Add/Update this table 
      table  
          thead  
              tr  
@@ -38,5 +36,3 @@ body
                     td= item.properties.name || 'N/A'
                     td= item.properties.brand || 'N/A'
                     td= item.properties.color || 'N/A'
-body  
-html  
