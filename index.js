@@ -48,6 +48,29 @@ app.get('/update-cobj', async (req, res) => {
 
 // * Code for Route 3 goes here
 
+app.post('/update-cobj', async (req, res) => {
+
+    const {name, brand, color} = req.body;
+
+    const customObject = "https://api.hubapi.com/crm/v3/objects/2-40889053?properties=name,brand,color";
+    const headers = {
+        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
+        'Content-Type': 'application/json'
+    }
+
+    const update = {properties: {name, brand, color} };
+
+    try {
+        await axios.post(customObject, update, { headers });
+        res.redirect('/'); // Redirect to homepage after successful update
+    } catch (error) {
+        console.error('Error updating object:', error.response?.data || error.message);
+        res.status(500).send('Failed to update custom object.');
+    }
+
+
+});
+
 /** 
 * * This is sample code to give you a reference for how you should structure your calls. 
 
